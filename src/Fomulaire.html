@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/forms.css">
+
+    <title>Livrable7 by isWane</title>
+  </head>
+  <body onload="desactiveSpan()">
+      <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow col-10 offset-1">
+        <img src="images/logosmall.PNG" srcset="images/logosmall.PNG" width="100" height="92" alt="Objis Logo" retina_logo_url="" class="fusion-standard-logo" />
+        <nav class="navbar navbar-light my-2 my-md-0 mr-md-3 col-6" >
+            <center>
+                <a type="btn btn-info" class="btn btn-info" href="index.html">Accueil</a>
+                <a type="btn btn-info" class="btn btn-info" href="#">Clients</a>
+                <a type="btn btn-info" class="btn btn-info" href="#">Tutos</a>
+                <a type="btn btn-info" class="btn btn-info" href="#">Catalogue</a>
+                <a type="btn btn-info" class="btn btn-info" href="#">#10000Codeurs</a>
+            </center>
+        </nav>
+        <form class="form-inline my-2 my-lg-0 col-4 offset-1">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button type="button" class="btn btn-info">Search</button>
+         </form> 
+      
+    </div>
+    <div class="container col-10 offset-1">
+        <hr class="mb-4">
+        <fieldset>
+            <legend class="font-weight-bold" id="legends">Inscription en ligne</legend><br>
+            <form action="formulaire.php" method="POST" id="validationForm" onsubmit="validationFormulaire()">
+                <div class="form-group row">
+                    <label for="niveau" class="font-weight-bold col-2 offset-2 col-form-label">Niveau</label>
+                     <div class="col-6">
+                        <select id="niveau" name="niveau" class="custom-select mr-sm-2" onfocus="validationNiveau()" onblur="validationNiveau()">
+                            <option value="none"></option>
+                            <option value="DUT 1">DUT 1</option>
+                            <option value="DUT 2">DUT 2</option>
+                            <option value="Licence 1">Licence 1</option>
+                            <option value="Licence 2">Licence 2</option>
+                            <option value="Licence 3">Licence 3</option>
+                            <option value="Master 1">Master 1</option>
+                            <option value="Master 2">Master 2</option>
+                            <option value="Doctorat">Doctorat</option>
+                        </select>
+                        <small class="allSpans">Veuillez selectionner votre niveau !</small>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="domaine" class="font-weight-bold col-2 offset-2 col-form-label">Domaine</label>
+                   <div class="col-6">
+                        <select id="domaine" name="domaine" class="custom-select mr-sm-2" onfocus="validationDomaine()" onblur="validationDomaine()">
+                            <option value="none"></option>
+                            <option value="Administration">Administration Réseau & Sécurité des Systèmes</option>
+                            <option value="Programmation">Programmation</option>
+                            <option value="WebMaster">WebMaster</option>
+                            <option value="BDD">Administration des Bases de Données</option>
+                            <option value="Infographie">Infographie</option>
+                            <option value="Cryptographie">Cryptographie</option>
+                        </select>
+                       <small class="allSpans">Veuillez selectionner votre domaine !</small>
+                    </div> 
+                </div>
+                <div class="form-group row">
+                  <label for="nom" class="font-weight-bold col-2 offset-2 col-form-label">Nom</label>
+                    <div class="col-6">
+                        <input type="text" class="form-control" name="nom" id="nom" onfocus="validationNom()" onblur="validationNom()"> 
+                        <small class="allSpans">Le champ nom doit contenir au moins 2 caractères !</small>
+                    </div>
+                </div>
+                <div class="form-group row">
+                  <label for="prenom" class="font-weight-bold col-2 offset-2 col-form-label">Prénom</label>
+                    <div class="col-6">
+                        <input type="text" class="form-control" name="prenom" id="prenom" onfocus="validationPrenom()" onblur="validationPrenom()">
+                        <small class="allSpans">Le champ prénom doit contenir au moins 2 caractères !</small>
+                    </div>
+                </div>
+                     <div class="form-group row">
+                <label for="sexe" class="font-weight-bold col-2 offset-2 control-label">Sexe</label>
+                    <div class="col-6">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input id="sexe1" name="sexe" type="radio" value="feminin" class="custom-control-input">
+                            <label class="custom-control-label" for="sexe1">Féminin</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                          <input id="sexe2" name="sexe" type="radio" value="masculin" class="custom-control-input">
+                          <label class="custom-control-label" for="sexe2">Masculin</label>
+                        </div>
+                        <small class="allSpans">Le choix du sexe est obligatoire !</small>
+                  </div>
+                </div> 
+                <div class="form-group row">
+                    <label for="date" class="font-weight-bold col-2 offset-2 control-label">Date de naissance</label>
+                <div class="col-6">
+                    <input type="date" class="form-control" name="date" id="date" value="false" onfocus="validationDate()" onblur="validationDate()">
+                    <small class="allSpans">Date de naissance obligatoire !</small>
+                </div>
+              </div>
+                <div class="form-group row">
+                  <label for="lieu" class="font-weight-bold col-2 offset-2 control-label">Lieu de Naissance</label>
+                     <div class="col-6">
+                        <input id="lieu" type="text" class="form-control" name="lieu" onfocus="validationLieu()" onblur="validationLieu()">
+                        <small class="allSpans">Veuillez choisir lieu de naissance !</small>
+                     </div>
+                </div>
+                 <div class="form-group row">
+                  <label for="nationalite" class="font-weight-bold col-2 offset-2 control-label">Pays de Naissance</label>
+                      <div class="col-6">
+                        <select id="nationalite" name="nationalite" class="custom-select mr-sm-2" onfocus="validationNationalite()" onblur="validationNationalite()">
+                            <option value="none"></option>
+                            <option value="Senegal">Sénégal</option>
+                            <option value="Cameroun">Cameroun</option>
+                            <option value="Togo">Togo</option>
+                            <option value="Cote d'Ivoire">Cote d'Ivoire</option>
+                            <option value="Maroc">Maroc</option>
+                            <option value="Mauritanie">Mauritanie</option>
+                            <option value="Nigeria">Nigéria</option>
+                            <option value="Congo">Congo</option>
+                            <option value="Burkina Faso">Burkina Faso</option>
+                        </select>
+                        <small class="allSpans">Veuillez choisir vôtre pays de naissance !</small>
+                    </div>
+                </div>
+                <div class="form-group row">
+                  <label for="pays" class="font-weight-bold col-2 offset-2 control-label">Pays de résidence</label>
+                    <div class="col-6">
+                        <select id="pays" name="pays" class="custom-select mr-sm-2" onfocus="validationPaysRésidence()" onblur="validationPaysRésidence()">
+                            <option value="none"></option>
+                            <option value="Senegal">Sénégal</option>
+                            <option value="Cameroun">Cameroun</option>
+                            <option value="Togo">Togo</option>
+                            <option value="Cote d'Ivoire">Cote d'Ivoire</option>
+                            <option value="Maroc">Maroc</option>
+                            <option value="Mauritanie">Mauritanie</option>
+                            <option value="Nigeria">Nigéria</option>
+                            <option value="Congo">Congo</option>
+                            <option value="Burkina Faso">Burkina Faso</option>
+                        </select>
+                        <small class="allSpans">Veuillez choisir vôtre pays de résidence !</small>
+                    </div>
+                </div>
+                <div class="form-group row">
+                  <label for="adresse" class="font-weight-bold col-2 offset-2 control-label">Adresse</label>
+                    <div class="col-6">
+                        <input id="adresse" type="text" class="form-control" name="adresse">
+                    </div>
+                </div>
+                <div class="form-group row">
+                  <label for="tel" class="font-weight-bold col-2 offset-2 control-label">Téléphone</label>
+                    <div class="col-6">
+                        <input id="tel" type="phone" class="form-control" name="tel">
+                    </div>
+                </div>
+                <div class="form-group row">
+                  <label for="email" class="font-weight-bold col-2 offset-2 control-label">Email</label>
+                    <div class="col-6">
+                        <input id="email" type="email" class="form-control" name="email">
+                         <small class="allSpans">Veuillez renseigner votre adresse mail !</small>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="situation" class="font-weight-bold col-2 offset-2 control-label">Situation familiale</label>
+                    <div class=" col-6" onfocus="validationSexe()" onblur="validationSexe()">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="situation1" name="situation" value="celibataire" class="custom-control-input">
+                            <label class="custom-control-label" for="situation1">Célibataire</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="situation2" name="situation" value="marie(e)" class="custom-control-input">
+                            <label class="custom-control-label" for="situation2">Marié(e)</label>
+                        </div>
+                         <small class="allSpans">Le choix de la situation familiale est obligatoire !</small>
+                    </div>    
+                </div><br>
+                <div class="form-group row">
+                    <div class="col-6 offset-4 form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                        <label class="form-check-label" for="invalidCheck2">
+                            J'accepte les termes et conditions.
+                        </label>
+                    </div>
+                </div>
+                 <hr class="mb-4">
+               <div class="form-group row">
+                   <div class="col-6 offset-4">
+                    <input class="btn btn-lg btn-primary col-3" type="submit" onclick="validationFormulaire()"/>
+                    <input class="btn btn-lg btn-danger col-3" type="reset" />
+                   </div>
+                </div>
+            </form>
+        </fieldset>
+      </div>
+
+      <footer class="container font-weight-bold col-10 offset-1 pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+           <div class="col-12 col-md">
+            <h3>Objis</h3>
+            <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
+              <p>Adresse<br />
+                    241 rue DUGUESCLIN,<br />
+                    69003 Lyon</p>
+              <a style="padding: 0;border-bottom: none" href="mailto:laye1wane@gmail.com">laye1wane@gmail.com</a>
+          </div>
+          <div class="col-6 col-md">
+            <h5 class="widget-title">Liens les plus visités</h5>
+            <ul id="menu-university-main-menu-1" class="list-unstyled">
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-13135"><a href="index.html">Accueil</a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13235"><a href="#">Clients</a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13236"><a href="#">200 Tutos</a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13237"><a href="#">Catalogue</a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-13239"><a href="#">#10000Codeurs</a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-15236"><a href="#">Nous Contacter</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5 class="widget-title">FORMATIONS JAVA 1</h5>
+            <ul class="list-unstyled">
+                <li>Formation <a class="spip_in" href="#">JAVA</a></li>
+                <li>Formation <a class="spip_out" href="#">VULGARISATION JAVA</a></li>
+                <li>Formation <a class="spip_in" href="#">’Performance Java’</a></li>
+                <li>Formation <a class="spip_in" href="#">architecture JAVA</a></li>
+                <li>Formation java <a class="spip_in" href="#">MAVEN</a></li>
+                <li>Formation Java <a class="spip_in" href="#">STRUTS 2</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5 class="widget-title">FORMATIONS JAVA 2</h5>
+                <ul class="list-unstyled">
+                    <li>Formation <a class="spip_in" href="#">Javascript &amp; JQuery</a></li>
+                    <li>Formation <a class="spip_in" href="#">java SPRING</a></li>
+                    <li>Formation java <a class="spip_in" href="#">Fuse ESB</a></li>
+                    <li>Formation java <a class="spip_in" href="#">ANDROID</a></li>
+                    <li>Formation java <a class="spip_in" href="#">JBoss</a></li>
+                    <li>Formation <a class="spip_in" href="#">JAVA Entreprise (JEE)</a></li>
+                </ul>
+          </div>
+        </div>
+      </footer>
+      
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/forms.js"></script>
+  </body>
+</html>
